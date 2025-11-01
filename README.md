@@ -34,6 +34,16 @@ YYYYMMDD_HHmmss.csv (e.g. 20251022_221515.csv), ensuring a unique filename every
 6. Saves the dataset as a `.csv` file in the `data` folder.
 
 
+### Timezone Handling
+
+Since FAANG companies trade in the U.S., Yahoo Finance provides timestamps in America/New_York time.<br>
+To align with Irish local time, the script performs the following steps:
+- Checks if the dataset includes timezone information.
+- Localises the data to America/New_York (the stock exchange timezone).
+- Converts the timestamps to my local timezone (Europe/Dublin).
+- Verifies the conversion by printing the timezone.
+
+
 ### Learning Path:
 
 This task helped me understand how to:
@@ -41,5 +51,6 @@ This task helped me understand how to:
 - Automate data downloads and save them efficiently.
 - Handle folders, file paths, and handle date formats + creating timestamps.
 - Debug VS Code and GitHub sync issues with packages and environments.
+- Work with timezones in pandas, including localising and converting between them.
 
 Each run of the program creates a new, timestamped CSV of FAANG stock data.
