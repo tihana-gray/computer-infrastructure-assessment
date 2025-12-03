@@ -34,7 +34,7 @@ YYYYMMDD_HHmmss.csv (e.g. 20251022_221515.csv), ensuring a unique filename every
 6. Saves the dataset as a `.csv` file in the `data` folder.
 
 
-### Timezone Handling
+### Timezone Handling:
 
 Since FAANG companies trade in the U.S., Yahoo Finance provides timestamps in America/New_York time.<br>
 To align with Irish local time, the script performs the following steps:
@@ -55,42 +55,10 @@ This task helped me understand how to:
 
 Each run of the program creates a new, timestamped CSV of FAANG stock data.
 
-### 📚 Full list of references:
-- https://packaging.python.org/en/latest/tutorials/installing-packages/
-- https://code.visualstudio.com/docs/python/environments
-- https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment
-- https://pip.pypa.io/en/stable/cli/pip_install/
+### 📚 Tools references:
+- https://finance.yahoo.com/news/faang-stocks-161056487.html
 - https://pandas.pydata.org/
 - https://docs.python.org/3/library/os.html
 - https://docs.python.org/3/library/datetime.html
-- https://stackoverflow.com/questions/15707532/import-datetime-v-s-from-datetime-import-datetime
-- https://www.geeksforgeeks.org/python/python-datetime-module/
-- https://docs.python.org/3/tutorial/controlflow.html#defining-functions  
-- https://aroussi.com/post/python-yahoo-finance, 
-- https://medium.com/@kasperjuunge/yfinance-10-ways-to-get-stock-data-with-python-6677f49e8282,
-- https://www.youtube.com/watch?v=j0sBKAB75oc 
-- https://www.ig.com/sg/trading-strategies/nasdaq-opening-and-closing-times--when-can-you-trade--230527
-- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.tz_localize.html
-- https://pandas.pydata.org/docs/user_guide/timeseries.html#localizing-time-zones
-- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.tz_convert.html
-- https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.tz.html
-- https://stackoverflow.com/questions/16628819/convert-pandas-timezone-aware-datetimeindex-to-naive-timestamp-but-in-certain-t
-- https://www.geeksforgeeks.org/pandas/pandas-series-dt-tz_localize/
-- https://pandas.pydata.org/docs/user_guide/timeseries.html#time-zone-handling
-- https://www.geeksforgeeks.org/python/difference-between-newline-and-carriage-return-in-python/
-- https://docs.python.org/3/library/functions.html#print
-- https://docs.python.org/3/library/os.path.html#os.path.isdir
-- https://www.w3schools.com/python/python_conditions.asp
-- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html
-- https://www.geeksforgeeks.org/python/python-os-path-isdir-method/
-- https://www.geeksforgeeks.org/python/python-strftime-function/
-- https://stackoverflow.com/questions/32490629/getting-todays-date-in-yyyy-mm-dd-in-python
-- https://www.geeksforgeeks.org/python/convert-datetime-string-to-yyyy-mm-dd-hhmmss-format-in-python/
-- https://docs.python.org/3/library/functions.html#func-str
-- https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
-- https://docs.python.org/3/library/datetime.html#datetime.datetime.now
-- https://docs.python.org/3/library/datetime.html#datetime.date.strftime
-- https://docs.python.org/3/tutorial/controlflow.html#defining-functions
-- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html
-- https://docs.python.org/3/library/os.path.html#os.path.join
-- https://docs.python.org/3/library/os.path.html#os
+
+➡️ **Full list of references under tasks in [problems.ipynb](https://github.com/tihana-gray/computer-infrastructure-assessment/blob/main/problems.ipynb)**
