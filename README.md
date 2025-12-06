@@ -13,7 +13,7 @@ This project uses the `yfinance` library to download hourly stock data for the l
 
 The data is saved as a .csv file inside a `data` folder in the project directory.<br>
 Each file is named using a timestamp format:<br>
-YYYYMMDD_HHmmss.csv (e.g. 20251022_221515.csv), ensuring a unique filename every time the script runs.
+`YYYYMMDD_HHmmss.csv` (e.g. `20251022_221515.csv`), ensuring a unique filename every time the script runs.
 
 
 ### Tools and Libaries:
@@ -55,10 +55,38 @@ This task helped me understand how to:
 
 Each run of the program creates a new, timestamped CSV of FAANG stock data.
 
+
+## Problem 2: Plotting Data
+
+This part of the project uses the latest CSV file created in **Problem 1** to plot the Close prices for the five FAANG companies on a single line chart.
+
+The script looks inside the data folder, finds the most recently modified `.csv` file (e.g. `20251129_141725.csv`), loads it with pandas, and selects only the Close prices for each stock.
+
+The resulting plot is saved as a `.png` file called `faang_close_prices.png` inside a plots folder in the project directory. If the plots folder does not exist, it is created automatically.
+
+### Tools and Libaries:
+
+Same as for Problem 1, including also `matplotlib` which creates a plot and saves it as an image.
+
+### What the script does:
+
+- Lists all files inside the data folder using `os.listdir()`.
+- Filters this list so that only `.csv` files are kept.
+- Builds full paths to each `CSV` file and picks the most recently modified one using `os.path.getmtime()`.
+- Loads the chosen `CSV` into a pandas DataFrame with MultiIndex columns.
+- Uses pandas indexing to select only the `Close` prices for all FAANG tickers.
+- Flattens the column structure so the DataFrame columns become just the ticker symbols (META, AAPL, AMZN, NFLX, GOOG).
+- Plots each ticker’s `Close` price over time on the same graph using matplotlib.
+- Adds a title, axis labels, a legend, and a grid to make the plot easier to read.
+- Checks if a `plots` folder exists, and creates it if it doesn’t.
+- Saves the final plot as `faang_close_prices.png` inside the `plots` folder.
+
 ### 📚 Tools references:
 - https://finance.yahoo.com/news/faang-stocks-161056487.html
 - https://pandas.pydata.org/
 - https://docs.python.org/3/library/os.html
 - https://docs.python.org/3/library/datetime.html
+- https://matplotlib.org/stable/tutorials/introductory/pyplot.html
+- https://numpy.org/devdocs/index.html
 
 ➡️ **Full list of references under tasks in [problems.ipynb](https://github.com/tihana-gray/computer-infrastructure-assessment/blob/main/problems.ipynb)**
