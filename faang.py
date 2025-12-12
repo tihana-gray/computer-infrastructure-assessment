@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+
+# https://realpython.com/python-shebang/
+# https://www.geeksforgeeks.org/python/why-we-write-usr-bin-env-python-on-the-first-line-of-a-python-script/
+# https://stackoverflow.com/questions/7670303/purpose-of-usr-bin-python3-shebang
+# https://medium.com/cloud-for-everybody/i-kept-seeing-usr-bin-env-python3-and-finally-decided-to-figure-it-out-a3376a21316b
+
+
 import yfinance as yf
 import pandas as pd
 import os
@@ -45,9 +53,7 @@ def get_data():
     # Saving
     filepath = os.path.join(folder_name, filename)
     data.to_csv(filepath)
-    
-    get_data()
-    
+
     
     # Problem 2
     
@@ -99,3 +105,13 @@ def get_data():
         plt.close()
         
         print(f"Plot saved successfully in '{plot_folder}' folder as 'faang_close_prices.png'.")
+        
+if __name__ == "__main__":
+    # https://www.geeksforgeeks.org/python/what-does-the-if-__name__-__main__-do/
+    # https://realpython.com/python-main-function/
+    # https://docs.python.org/3/library/__main__.html
+    # https://stackoverflow.com/questions/419163/what-does-if-name-main-do
+    # https://realpython.com/python-main-function/
+    get_data()
+    plot_data()
+    print("All saved successfully.")
