@@ -69,6 +69,15 @@ def plot_data():
         
     csv_paths = [os.path.join(data_folder, f) for f in csv_files] 
     latest_file = max(csv_paths, key=os.path.getmtime)
+    
+    # Extracting filename from full path
+    csv_filename = os.path.basename(latest_file)
+    # https://docs.python.org/3/library/os.path.html#os.path.basename
+    
+    # Removing .csv extension and replace with .png (saving png with the same name as csv)
+    plot_filename = os.path.splitext(csv_filename)[0] + ".png"
+    # https://docs.python.org/3/library/os.path.html#os.path.splitext
+    
     print("Latest file picked:", latest_file)
         
     file_path = latest_file
@@ -93,6 +102,7 @@ def plot_data():
     plt.xlabel("Date and Time (Irish Local Time)", fontsize=12)
     plt.ylabel("Stock Closing Price", fontsize=12)
     plt.legend(title="Ticker", loc="upper left")
+    plt.xticks(rotation=45) # Rotating x-axis labels for better readability
     plt.grid(True)
         
     #Saving the plot
@@ -100,7 +110,15 @@ def plot_data():
          os.makedirs(plot_folder)
     print(f"Created folder: {plot_folder}")
             
-    plt.savefig(os.path.join(plot_folder, "faang_close_prices.png"), dpi=300, bbox_inches='tight')
+    # Saving the plot into plots folder
+    plt.savefig(
+        os.path.join(plot_folder, plot_filename),
+        dpi=300,
+        bbox_inches='tight'
+    )
+    # https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html
+    # https://docs.python.org/3/library/os.path.html#os.path.join
+    
     plt.close()
         
     print(f"Plot saved successfully in '{plot_folder}' folder as 'faang_close_prices.png'.")
