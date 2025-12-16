@@ -62,7 +62,7 @@ This part of the project uses the latest CSV file created in **Problem 1** to pl
 
 The script looks inside the data folder, finds the most recently modified `.csv` file (e.g. `20251129_141725.csv`), loads it with pandas, and selects only the Close prices for each stock.
 
-The resulting plot is saved as a `.png` file called `faang_close_prices.png` inside a plots folder in the project directory. If the plots folder does not exist, it is created automatically.
+The resulting plot is saved as a `.png` file inside a plots folder in the project directory. If the plots folder does not exist, it is created automatically. The timestamp from the CSV filename is reused to name the plot.
 
 ### Tools and Libaries:
 
@@ -79,7 +79,20 @@ Same as for Problem 1, including also `matplotlib` which creates a plot and save
 - Plots each ticker’s `Close` price over time on the same graph using matplotlib.
 - Adds a title, axis labels, a legend, and a grid to make the plot easier to read.
 - Checks if a `plots` folder exists, and creates it if it doesn’t.
-- Saves the final plot as `faang_close_prices.png` inside the `plots` folder.
+- Saves the final plot as `png`  file inside the `plots` folder.
+
+
+## Problem 3: Script
+
+The `faang.py` script was designed to function as a standalone executable file by incorporating a shebang line at the top of the script. What it does:
+- Downloads FAANG stock data.
+- Saves a timestamped CSV file.
+- Generates a matching timestamped PNG plot.
+- Prints confirmation messages to the terminal.
+
+The script directly reuses the `get_data()` and `plot_data()` functions developed in Problems 1 and 2. 
+
+The conditional statement `if __name__ == "__main__":` was added to control execution flow. It ensures that the data download and plotting processes are only triggered when the script is executed directly and not when it is imported into another Python file. 
 
 ### 📚 Tools references:
 - https://finance.yahoo.com/news/faang-stocks-161056487.html
