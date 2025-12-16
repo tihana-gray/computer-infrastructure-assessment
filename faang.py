@@ -121,7 +121,7 @@ def plot_data():
     
     plt.close()
         
-    print(f"Plot saved successfully in '{plot_folder}' folder as 'faang_close_prices.png'.")
+    print(f"Plot saved successfully in '{plot_folder}' folder as '{plot_filename}'.")
         
 if __name__ == "__main__":
     # https://www.geeksforgeeks.org/python/what-does-the-if-__name__-__main__-do/
