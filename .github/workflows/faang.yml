@@ -1,4 +1,4 @@
-# Adapted from course sample
+# Adapted from course code sample
 # Cron syntax reference: https://crontab.guru/#0_9_*_*_6
 
 name: Run faang.py and push results
