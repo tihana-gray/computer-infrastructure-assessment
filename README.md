@@ -94,6 +94,43 @@ The script directly reuses the `get_data()` and `plot_data()` functions develope
 
 The conditional statement `if __name__ == "__main__":` was added to control execution flow. It ensures that the data download and plotting processes are only triggered when the script is executed directly and not when it is imported into another Python file. 
 
+
+## Problem 4: Automation
+
+The final part of this project automates the execution of the `faang.py` script using GitHub Actions.
+
+This automation is implemented through a GitHub Actions workflow defined in a YAML file named `faang.yml`, which is stored in the required directory:<br>
+`.github/workflows/faang.yml`
+
+### Workflow purpose and schedule
+
+The workflow is configured to run every Saturday morning at 09:00 Irish time using a cron schedule.<br>
+When the workflow runs, it performs the following tasks automatically:<br>
+- Executes the `faang.py`script.
+- Downloads the latest FAANG stock data.
+- Saves a new timestamped CSV file to the data folder.
+- Generates a matching timestamped PNG plot in the plots folder.
+- Commits and pushes created files back to the repository.
+
+This ensures that the repository always contains an up-to-date weekly snapshot of FAANG stock data and visualisations.
+
+### Environment and dependencies
+
+The workflow runs on `ubuntu-latest`Linux virtual machine and default GitHub setting. Since each run starts from a clean environment, Python and required third-party libraries must be installed as part of the workflow.
+
+Python is set up using `actions/setup-python@v5`. The workflow also installs libraries required by `faang.py`:<br>
+- yfinance
+- pandas
+- matplotlib
+- numpy<br>
+Standard library modules such as `os` and `datetime` do not require installation. This approach also avoids sync problems in virtual environement.
+
+### Commit and push automation
+
+After `faang.py` finishes executing, the workflow automatically stages any newly created or updated files in the data and plots folders. If changes are detected, they are committed using a GitHub Actions and pushed back to the repository.
+
+This completes the automation loop: data is collected, processed, visualised, and stored without any manual steps.
+
 ### 📚 Tools references:
 - https://finance.yahoo.com/news/faang-stocks-161056487.html
 - https://pandas.pydata.org/
@@ -101,5 +138,8 @@ The conditional statement `if __name__ == "__main__":` was added to control exec
 - https://docs.python.org/3/library/datetime.html
 - https://matplotlib.org/stable/tutorials/introductory/pyplot.html
 - https://numpy.org/devdocs/index.html
+- https://docs.github.com/en/actions
+- https://crontab.guru/#0_9_*_*_6
+- https://pip.pypa.io/en/stable/cli/pip_install
 
 ➡️ **Full list of references under tasks in [problems.ipynb](https://github.com/tihana-gray/computer-infrastructure-assessment/blob/main/problems.ipynb)**
