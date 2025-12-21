@@ -1,7 +1,7 @@
 # Computer Infrastructure Assessment
 
 
-## Problem 1: Data from yfinance
+## 🧮 Problem 1: Data from yfinance
 
 This project uses the `yfinance` library to download hourly stock data for the last five days for the five FAANG companies:
 
@@ -56,7 +56,7 @@ This task helped me understand how to:
 Each run of the program creates a new, timestamped CSV of FAANG stock data.
 
 
-## Problem 2: Plotting Data
+## 🧮 Problem 2: Plotting Data
 
 This part of the project uses the latest CSV file created in **Problem 1** to plot the Close prices for the five FAANG companies on a single line chart.
 
@@ -82,7 +82,7 @@ Same as for Problem 1, including also `matplotlib` which creates a plot and save
 - Saves the final plot as `png`  file inside the `plots` folder.
 
 
-## Problem 3: Script
+## 🧮 Problem 3: Script
 
 The `faang.py` script was designed to function as a standalone executable file by incorporating a shebang line at the top of the script. What it does:
 - Downloads FAANG stock data.
@@ -95,7 +95,7 @@ The script directly reuses the `get_data()` and `plot_data()` functions develope
 The conditional statement `if __name__ == "__main__":` was added to control execution flow. It ensures that the data download and plotting processes are only triggered when the script is executed directly and not when it is imported into another Python file. 
 
 
-## Problem 4: Automation
+## 🧮 Problem 4: Automation
 
 The final part of this project automates the execution of the `faang.py` script using GitHub Actions.
 
